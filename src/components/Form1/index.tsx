@@ -12,7 +12,7 @@ const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
     console.log(values);
     console.log(actions);
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    //actions.resetForm();
+    actions.resetForm();
 };
 
 export const Form1 = () => {
@@ -35,7 +35,7 @@ export const Form1 = () => {
         onSubmit,
     });
 
-    console.log(errors); //https://youtu.be/7Ophfq0lEAY?t=377
+    console.log(errors);
 
     return (
         <form onSubmit={handleSubmit} autoComplete="off">
