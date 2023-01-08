@@ -29,11 +29,14 @@ export function Form2() {
         >
             {({ isSubmitting }) => (
                 <Form>
+
                     <CustomInput
                         label="Username"
                         name="username"
                         type="text"
-                        placeholder="Enter your username" />
+                        placeholder="Enter your username"
+                        />
+
                     <CustomSelect
                         label="Job Type"
                         name="jobType"
@@ -45,7 +48,9 @@ export function Form2() {
                         <option value="manager">Product Manager</option>
                         <option value="other">Other</option>
                     </CustomSelect>
+
                     <CustomCheckbox type="checkbox" name="acceptedTos" />
+                    
                     <button disabled={isSubmitting} type="submit">
                         Submit
                     </button>

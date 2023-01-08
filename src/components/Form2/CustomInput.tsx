@@ -1,17 +1,17 @@
+import { HTMLAttributes } from "react";
 import { useField } from "formik";
 
-export function CustomInput({ label, ...props }) {
-    const [field, meta] = useField(props);
+export function CustomInput({ label, ...rest }: {label: string} & HTMLAttributes<HTMLInputElement>) {
+    const [field, meta] = useField(rest);
 
     return (
         <>
             <label>{label}</label>
             <input
                 {...field}
-                {...props}
+                {...rest}
                 className={meta.touched && meta.error ? "input-error" : ""} />
             {meta.touched && meta.error && <div className="error">{meta.error}</div>}
         </>
     );
 }
-
