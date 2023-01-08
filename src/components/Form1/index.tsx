@@ -81,18 +81,7 @@ export function Form1() {
                 />
                 {errors.confirmPassword && touched.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
 
-                <button disabled={isSubmitting} type="submit"
-                    className="tm-button"
-                    // className="px-3 py-2 
-                    // text-sm font-medium text-center
-                    // text-gray-700 bg-white border-gray-300 
-                    
-                    // hover:bg-gray-100 focus:ring focus:ring-gray-400 
-                    // disabled:text-gray-400 disabled:bg-gray-50 disabled:border-gray-100 disabled:cursor-not-allowed
-                    
-                    // border rounded-lg shadow-sm transition-all
-                    // "
-                >
+                <button disabled={isSubmitting} type="submit" className="tm-button-ssubmit">
                     Submit
                 </button>
             </form>

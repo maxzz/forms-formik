@@ -1,5 +1,5 @@
 @layer components {
-    .tm-button {
+    .tm-button-ssubmit {
         @apply px-3 py-2 
         text-sm font-medium text-center
         text-gray-700 bg-white border-gray-300 
