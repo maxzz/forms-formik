@@ -1,7 +1,7 @@
-import { HTMLAttributes } from "react";
+import React, { HTMLAttributes, InputHTMLAttributes } from "react";
 import { useField } from "formik";
 
-export function CustomCheckbox({ label, ...rest }: {label: string} & HTMLAttributes<HTMLInputElement>) {
+export function CustomCheckbox({ label, ...rest }: {label: string} & InputHTMLAttributes<HTMLInputElement>) {
     const [field, meta] = useField(rest);
 
     return (
@@ -11,7 +11,7 @@ export function CustomCheckbox({ label, ...rest }: {label: string} & HTMLAttribu
                     {...field}
                     {...rest}
                     className={meta.touched && meta.error ? "input-error" : ""} />
-                <span>I accept the terms of service</span>
+                <span>{label}</span>
             </div>
 
             {meta.touched && meta.error && <div className="error">{meta.error}</div>}
