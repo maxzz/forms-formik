@@ -1,7 +1,7 @@
-import { HTMLAttributes } from "react";
+import { InputHTMLAttributes } from "react";
 import { useField } from "formik";
 
-export function CustomInput({ label, ...rest }: {label: string} & HTMLAttributes<HTMLInputElement>) {
+export function CustomInput({ label, ...rest }: {label: string} & InputHTMLAttributes<HTMLInputElement>) {
     const [field, meta] = useField(rest);
 
     return (

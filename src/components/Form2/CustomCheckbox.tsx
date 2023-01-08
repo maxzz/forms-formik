@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, InputHTMLAttributes } from "react";
+import { InputHTMLAttributes } from "react";
 import { useField } from "formik";
 
 export function CustomCheckbox({ label, ...rest }: {label: string} & InputHTMLAttributes<HTMLInputElement>) {
