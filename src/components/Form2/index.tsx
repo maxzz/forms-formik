@@ -18,7 +18,7 @@ const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
 
 export function Form2() {
     return (
-        <Formik
+        <Formik<Values>
             initialValues={{
                 username: "",
                 jobType: "",
