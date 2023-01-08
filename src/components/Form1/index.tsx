@@ -1,6 +1,6 @@
 import { FormikHelpers, useFormik } from "formik";
 import { basicSchema } from "../../schemas";
-import './index.css';
+// import './index.css';
 
 type Values = {
     email: string;

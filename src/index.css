@@ -1,8 +1,11 @@
+@import './components/Form1/index.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components { /* https://sailboatui.com/docs/components/dropdown */
+/* https://sailboatui.com/docs/components/dropdown */
+/* @layer components {
     .tm-button {
         @apply px-3 py-2 
         text-sm font-medium text-center
@@ -14,4 +17,4 @@
         border rounded-lg shadow-sm transition-all
         ;
     }
-}
+} */
