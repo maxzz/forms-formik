@@ -27,7 +27,7 @@ export function Form2() {
             validationSchema={advancedSchema}
             onSubmit={onSubmit}
         >
-            {({ isSubmitting }) => (
+            {({ values, errors, isSubmitting }) => (<>
                 <Form>
 
                     <CustomInput
@@ -55,11 +55,16 @@ export function Form2() {
                         name="acceptedTos"
                     />
 
-                    <button disabled={isSubmitting} type="submit">
+                    <button disabled={isSubmitting} type="submit" className="tm-button-submit">
                         Submit
                     </button>
+
                 </Form>
-            )}
+
+                <div className="mt-12 px-4 text-slate-100 whitespace-pre">
+                    {JSON.stringify({ values, errors }, null, 4)}
+                </div>
+            </>)}
         </Formik>
     );
 }
