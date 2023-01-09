@@ -4,17 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* https://sailboatui.com/docs/components/dropdown */
-/* @layer components {
-    .tm-button {
-        @apply px-3 py-2 
-        text-sm font-medium text-center
-        text-gray-700 bg-white border-gray-300 
-        
-        hover:bg-gray-100 focus:ring focus:ring-gray-400 
-        disabled:text-gray-400 disabled:bg-gray-50 disabled:border-gray-100 disabled:cursor-not-allowed
-        
-        border rounded-lg shadow-sm transition-all
-        ;
-    }
-} */
+/* Hack to get rid of the undesired behavior for G:'input:-internal-autofill-selected' */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
