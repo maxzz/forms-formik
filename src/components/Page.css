@@ -64,16 +64,16 @@ input[type="checkbox"] {
 
 /* Checkbox */
 
-.checkbox {
+/* .checkbox {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-top: 1rem;
-}
+} */
 
 /* Button */
 
-button {
+/* button {
     display: block;
     margin: 1rem 0;
     padding: 0.35rem 0.5rem;
@@ -89,7 +89,7 @@ button {
 
 button:disabled {
     opacity: 0.35;
-}
+} */
 
 /* Errors */
 

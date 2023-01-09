@@ -1,6 +1,15 @@
 @layer components {
-    .tm-button-ssubmit {
-        @apply px-3 py-2 
+    .tm-input {
+    }
+
+    .tm-input-select {
+    }
+
+    .tm-input-checkbox {
+    }
+
+    .tm-button-submit {
+        @apply mt-4 px-3 py-2 
         text-sm font-medium text-center
         text-gray-700 bg-white border-gray-300 
         

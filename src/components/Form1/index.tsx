@@ -1,6 +1,5 @@
 import { FormikHelpers, useFormik } from "formik";
 import { basicSchema } from "../../schemas";
-// import './index.css';
 
 type Values = {
     email: string;
@@ -16,8 +15,16 @@ const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
     actions.resetForm();
 };
 
+function ErrorHint({ msg }: { msg: string | boolean | undefined; }) {
+    return (<>
+        {msg && typeof msg === 'string' ? msg : undefined}
+    </>);
+}
+
 export function Form1() {
-    const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit, } = useFormik<Values>({
+    const {
+        values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit,
+    } = useFormik<Values>({
         initialValues: {
             email: '',
             age: '',
@@ -27,69 +34,66 @@ export function Form1() {
         validationSchema: basicSchema,
         onSubmit,
     });
-    console.log(errors);
 
-    return (
-        <>
-            <form onSubmit={handleSubmit} autoComplete="off">
+    return (<>
+        <form onSubmit={handleSubmit} autoComplete="off">
 
-                <label htmlFor="email">Email</label>
-                <input
-                    value={values.email}
-                    onChange={handleChange}
-                    id="email"
-                    type="email"
-                    placeholder="Enter your email"
-                    onBlur={handleBlur}
-                    className={errors.email && touched.email ? "input-error" : ""}
-                />
-                {errors.email && touched.email && <p className="error">{errors.email}</p>}
+            <label htmlFor="email">Email</label>
+            <input
+                value={values.email}
+                onChange={handleChange}
+                id="email"
+                type="email"
+                placeholder="Enter your email"
+                onBlur={handleBlur}
+                className={errors.email && touched.email ? "input-error" : ""}
+            />
+            <ErrorHint msg={touched.email && errors.email} />
+            {errors.email && touched.email && <p className="error">{errors.email}</p>}
 
-                <label htmlFor="age">Age</label>
-                <input
-                    id="age"
-                    type="number"
-                    placeholder="Enter your age"
-                    value={values.age}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={errors.age && touched.age ? "input-error" : ""}
-                />
-                {errors.age && touched.age && <p className="error">{errors.age}</p>}
+            <label htmlFor="age">Age</label>
+            <input
+                id="age"
+                type="number"
+                placeholder="Enter your age"
+                value={values.age}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={errors.age && touched.age ? "input-error" : ""}
+            />
+            {errors.age && touched.age && <p className="error">{errors.age}</p>}
 
-                <label htmlFor="password">Password</label>
-                <input
-                    id="password"
-                    type="password"
-                    placeholder="Enter your password"
-                    value={values.password}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={errors.password && touched.password ? "input-error" : ""}
-                />
-                {errors.password && touched.password && <p className="error">{errors.password}</p>}
+            <label htmlFor="password">Password</label>
+            <input
+                id="password"
+                type="password"
+                placeholder="Enter your password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={errors.password && touched.password ? "input-error" : ""}
+            />
+            {errors.password && touched.password && <p className="error">{errors.password}</p>}
 
-                <label htmlFor="confirmPassword">Confirm Password</label>
-                <input
-                    id="confirmPassword"
-                    type="password"
-                    placeholder="Confirm password"
-                    value={values.confirmPassword}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={errors.confirmPassword && touched.confirmPassword ? "input-error" : ""}
-                />
-                {errors.confirmPassword && touched.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
+            <label htmlFor="confirmPassword">Confirm Password</label>
+            <input
+                id="confirmPassword"
+                type="password"
+                placeholder="Confirm password"
+                value={values.confirmPassword}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={errors.confirmPassword && touched.confirmPassword ? "input-error" : ""}
+            />
+            {errors.confirmPassword && touched.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
 
-                <button disabled={isSubmitting} type="submit" className="tm-button-ssubmit">
-                    Submit
-                </button>
-            </form>
+            <button disabled={isSubmitting} type="submit" className="tm-button-submit">
+                Submit
+            </button>
+        </form>
 
-            <div className="px-4 text-slate-100 whitespace-pre">
-                {`Values:\n${JSON.stringify(values, null, 4)}\n\n`}
-                {`Errors:\n${JSON.stringify(values, null, 4)}`}
-            </div>
-        </>
-    );
+        <div className="px-4 text-slate-100 whitespace-pre">
+            {JSON.stringify({ values, errors }, null, 4)}
+        </div>
+    </>);
 }
