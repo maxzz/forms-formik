@@ -16,9 +16,7 @@ const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
 };
 
 function ErrorHint({ msg }: { msg: string | boolean | undefined; }) {
-    return (<>
-        {msg && typeof msg === 'string' ? msg : undefined}
-    </>);
+    return <> {msg ? <p className="tm-error-hint">{msg}</p> : undefined} </>;
 }
 
 export function Form1() {
@@ -49,7 +47,6 @@ export function Form1() {
                 className={errors.email && touched.email ? "input-error" : ""}
             />
             <ErrorHint msg={touched.email && errors.email} />
-            {errors.email && touched.email && <p className="error">{errors.email}</p>}
 
             <label htmlFor="age">Age</label>
             <input
@@ -61,7 +58,7 @@ export function Form1() {
                 onBlur={handleBlur}
                 className={errors.age && touched.age ? "input-error" : ""}
             />
-            {errors.age && touched.age && <p className="error">{errors.age}</p>}
+            <ErrorHint msg={touched.age && errors.age} />
 
             <label htmlFor="password">Password</label>
             <input
@@ -73,7 +70,7 @@ export function Form1() {
                 onBlur={handleBlur}
                 className={errors.password && touched.password ? "input-error" : ""}
             />
-            {errors.password && touched.password && <p className="error">{errors.password}</p>}
+            <ErrorHint msg={touched.password && errors.password} />
 
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
@@ -85,7 +82,7 @@ export function Form1() {
                 onBlur={handleBlur}
                 className={errors.confirmPassword && touched.confirmPassword ? "input-error" : ""}
             />
-            {errors.confirmPassword && touched.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
+            <ErrorHint msg={touched.confirmPassword && errors.confirmPassword} />
 
             <button disabled={isSubmitting} type="submit" className="tm-button-submit">
                 Submit
