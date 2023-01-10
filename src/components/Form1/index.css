@@ -18,11 +18,11 @@
         @apply ring-red-400 ring-2;
     }
 
-    .tm-input-select {
+    /* .tm-input-select {
     }
 
     .tm-input-checkbox {
-    }
+    } */
 
     .tm-button-submit {
         @apply mt-4 px-3 py-2

@@ -2,7 +2,6 @@ import { HTMLAttributes, useState } from 'react';
 import { classNames } from '../utils/classnames';
 import { Form1 } from './Form1';
 import { Form2 } from './Form2';
-import './Page.css';
 
 function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAttributes<HTMLButtonElement>) {
     return (
@@ -24,14 +23,16 @@ export function Page() {
             </div>
 
             {currentForm === 0 &&
-                <>
-                    <div className="flex-1">
-                        <Form1 />
-                    </div>
-                </>
+                <div className="">
+                    <Form1 />
+                </div>
             }
 
-            {currentForm === 1 && <Form2 />}
+            {currentForm === 1 &&
+                <div className="">
+                    <Form2 />
+                </div>
+            }
         </div>
     );
 }
