@@ -2,6 +2,7 @@ import { HTMLAttributes, useState } from 'react';
 import { classNames } from '../utils/classnames';
 import { Form1 } from './Form1';
 import { Form2 } from './Form2';
+import { Form3 } from './Form3';
 
 function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAttributes<HTMLButtonElement>) {
     return (
@@ -12,14 +13,14 @@ function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAtt
 }
 
 export function Page() {
-    const [currentForm, setCurrentForm] = useState(1);
+    const [currentForm, setCurrentForm] = useState(2);
     return (
-        // <div className="mx-auto min-w-[24ch] max-w-[80ch] h-full text-sm text-slate-100 grid grid-rows-[auto_1fr_auto]">
         <div className="h-full text-sm text-slate-100 flex flex-col">
 
             <div className="py-12 flex items-center justify-center bg-indigo-900">
                 <TabButton active={currentForm === 0} onClick={() => setCurrentForm(0)}>Login</TabButton>
                 <TabButton active={currentForm === 1} onClick={() => setCurrentForm(1)}>Advanced form</TabButton>
+                <TabButton active={currentForm === 2} onClick={() => setCurrentForm(2)}>FieldArray</TabButton>
             </div>
 
             {currentForm === 0 &&
@@ -31,6 +32,12 @@ export function Page() {
             {currentForm === 1 &&
                 <div className="">
                     <Form2 />
+                </div>
+            }
+
+            {currentForm === 2 &&
+                <div className="">
+                    <Form3 />
                 </div>
             }
         </div>
