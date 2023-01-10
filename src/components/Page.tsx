@@ -24,19 +24,19 @@ export function Page() {
             </div>
 
             {currentForm === 0 &&
-                <div className="">
+                <div className="px-4">
                     <Form1 />
                 </div>
             }
 
             {currentForm === 1 &&
-                <div className="">
+                <div className="px-4">
                     <Form2 />
                 </div>
             }
 
             {currentForm === 2 &&
-                <div className="">
+                <div className="px-4">
                     <Form3 />
                 </div>
             }
