@@ -27,7 +27,7 @@ export function Form2() {
             validationSchema={advancedSchema}
             onSubmit={onSubmit}
         >
-            {({ values, errors, isSubmitting }) => (<>
+            {({ values, errors, isSubmitting, resetForm }) => (<>
                 <Form className="max-w-[80ch] mx-auto flex flex-col">
 
                     <CustomInput
@@ -61,9 +61,19 @@ export function Form2() {
 
                 </Form>
 
-                <div className="mt-12 px-4 text-slate-100 whitespace-pre">
+                <div className="px-4 text-slate-100 whitespace-pre">
                     {JSON.stringify({ values, errors }, null, 4)}
                 </div>
+
+                <div className="">
+                    <input
+                        className="ml-4 mt-4 px-3 py-2 border-slate-400 hover:bg-indigo-500 border rounded active:scale-[.97]"
+                        type="button"
+                        value="Reset"
+                        onClick={() => resetForm()}
+                    />
+                </div>
+
             </>)}
         </Formik>
     );
