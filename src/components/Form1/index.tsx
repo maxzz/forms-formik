@@ -1,5 +1,6 @@
 import { FormikHelpers, useFormik } from "formik";
 import { basicSchema } from "../../schemas";
+import { ErrorHint } from "../UI";
 
 type Values = {
     email: string;
@@ -14,10 +15,6 @@ const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
 };
-
-function ErrorHint({ msg }: { msg: string | boolean | undefined; }) {
-    return <> {msg ? <p className="tm-error-hint">{msg}</p> : undefined} </>;
-}
 
 export function Form1() {
     const {

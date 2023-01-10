@@ -28,7 +28,7 @@ export function Form2() {
             onSubmit={onSubmit}
         >
             {({ values, errors, isSubmitting }) => (<>
-                <Form>
+                <Form className="flex flex-col">
 
                     <CustomInput
                         label="Username"

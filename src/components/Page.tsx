@@ -13,7 +13,7 @@ function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAtt
 }
 
 export function Page() {
-    const [currentForm, setCurrentForm] = useState(0);
+    const [currentForm, setCurrentForm] = useState(1);
     return (
         // <div className="mx-auto min-w-[24ch] max-w-[80ch] h-full text-sm text-slate-100 grid grid-rows-[auto_1fr_auto]">
         <div className="h-full text-sm text-slate-100 flex flex-col">
