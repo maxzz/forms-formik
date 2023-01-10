@@ -8,14 +8,20 @@ export function CustomInput({ label, ...rest }: { label: string; name: string; }
     const hasError = meta.touched && meta.error;
     return (<>
         <label className="flex flex-col">
-            <span>
+            <span className="mt-4 mb-1 block font-semibold text-left">
                 {label}
             </span>
-            
+
             <input
                 {...field}
                 {...rest}
-                className={classNames(hasError && "input-error")}
+                className={classNames(
+                    "px-3 py-2 w-full rounded",
+                    `text-slate-200 bg-slate-800 
+                    placeholder:text-slate-500 ring-slate-600 focus:ring-sky-600
+                    ring-2 rounded-md outline-none`,
+                    hasError && "ring-red-400 ring-2",
+                )}
             />
 
             <ErrorHint msg={hasError} />

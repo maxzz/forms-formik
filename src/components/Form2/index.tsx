@@ -28,7 +28,7 @@ export function Form2() {
             onSubmit={onSubmit}
         >
             {({ values, errors, isSubmitting }) => (<>
-                <Form className="flex flex-col">
+                <Form className="max-w-[80ch] mx-auto flex flex-col">
 
                     <CustomInput
                         label="Username"

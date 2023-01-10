@@ -7,11 +7,11 @@ export function CustomCheckbox({ label, ...rest }: { label: string; name: string
     const [field, meta] = useField(rest);
     const hasError = meta.touched && meta.error;
     return (<>
-        <div className="mt-4 flex items-center">
+        <div className="mt-4 flex items-center space-x-2">
             <input
                 {...field}
                 {...rest}
-                className={classNames(hasError && "input-error")}
+                className={classNames("w-4 h-4 rounded", hasError && "ring-red-400 ring-2")}
                 />
             <span>{label}</span>
         </div>
