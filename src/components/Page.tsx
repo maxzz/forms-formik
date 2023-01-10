@@ -6,7 +6,7 @@ import './Page.css';
 
 function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAttributes<HTMLButtonElement>) {
     return (
-        <button className={classNames("px-4 py-3 w-max border-slate-400 border rounded", active && "bg-red-500")} {...rest}>
+        <button className={classNames("px-4 py-3 w-max font-semibold text-xl", active ? "text-slate-100" : "text-slate-400 hover:text-slate-200")} {...rest}>
             {children}
         </button>
     );
@@ -15,16 +15,22 @@ function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAtt
 export function Page() {
     const [currentForm, setCurrentForm] = useState(0);
     return (
-        <div className="mx-auto min-w-[24ch] max-w-[80ch] h-full text-sm text-slate-100 grid grid-rows-[auto_1fr_auto]">
+        // <div className="mx-auto min-w-[24ch] max-w-[80ch] h-full text-sm text-slate-100 grid grid-rows-[auto_1fr_auto]">
+        <div className="h-full text-sm text-slate-100 flex flex-col">
 
-            <div className="py-4 flex items-center justify-center space-x-2">
-                <TabButton active={currentForm === 0} onClick={() => setCurrentForm(0)}>Simple form</TabButton>
+            <div className="py-12 flex items-center justify-center bg-indigo-900">
+                <TabButton active={currentForm === 0} onClick={() => setCurrentForm(0)}>Login</TabButton>
                 <TabButton active={currentForm === 1} onClick={() => setCurrentForm(1)}>Advanced form</TabButton>
-                {/* <button className="px-4 py-3 w-max border-slate-400 border rounded" onClick={() => setCurrentForm(0)}>Simple form</button> */}
-                {/* <button className="px-4 py-3 w-max border-slate-400 border rounded" onClick={() => setCurrentForm(1)}>Advanced form</button> */}
             </div>
 
-            {currentForm === 0 && <Form1 />}
+            {currentForm === 0 &&
+                <>
+                    <div className="flex-1">
+                        <Form1 />
+                    </div>
+                </>
+            }
+
             {currentForm === 1 && <Form2 />}
         </div>
     );

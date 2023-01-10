@@ -34,7 +34,7 @@ export function Form1() {
     });
 
     return (<>
-        <form onSubmit={handleSubmit} autoComplete="off">
+        <form onSubmit={handleSubmit} autoComplete="off" className="tm-form">
 
             <label htmlFor="email">Email</label>
             <input
@@ -44,7 +44,7 @@ export function Form1() {
                 type="email"
                 placeholder="Enter your email"
                 onBlur={handleBlur}
-                className={errors.email && touched.email ? "input-error" : ""}
+                className={touched.email && errors.email ? "input-error" : ""}
             />
             <ErrorHint msg={touched.email && errors.email} />
 
@@ -56,7 +56,7 @@ export function Form1() {
                 value={values.age}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={errors.age && touched.age ? "input-error" : ""}
+                className={touched.age && errors.age ? "input-error" : ""}
             />
             <ErrorHint msg={touched.age && errors.age} />
 
@@ -68,7 +68,7 @@ export function Form1() {
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={errors.password && touched.password ? "input-error" : ""}
+                className={touched.password && errors.password ? "input-error" : ""}
             />
             <ErrorHint msg={touched.password && errors.password} />
 
@@ -80,7 +80,7 @@ export function Form1() {
                 value={values.confirmPassword}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={errors.confirmPassword && touched.confirmPassword ? "input-error" : ""}
+                className={touched.confirmPassword && errors.confirmPassword ? "input-error" : ""}
             />
             <ErrorHint msg={touched.confirmPassword && errors.confirmPassword} />
 
@@ -89,8 +89,8 @@ export function Form1() {
             </button>
         </form>
 
-        <div className="px-4 text-slate-100 whitespace-pre">
+        {/* <div className="px-4 text-slate-100 whitespace-pre">
             {JSON.stringify({ values, errors }, null, 4)}
-        </div>
+        </div> */}
     </>);
 }

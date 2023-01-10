@@ -1,5 +1,21 @@
 @layer components {
-    .tm-input {
+    .tm-form {
+        @apply max-w-[54ch] mx-auto flex flex-col;
+    }
+
+    .tm-form label {
+        @apply mt-4 mb-1 block font-semibold text-left;
+    }
+
+    .tm-form input {
+        @apply px-3 py-2 w-full 
+        text-slate-200 bg-slate-800 
+        placeholder:text-slate-500 ring-slate-600 focus:ring-sky-600
+        ring-2 rounded-md outline-none;
+    }
+
+    .tm-form input.input-error {
+        @apply ring-red-400 ring-2;
     }
 
     .tm-input-select {
@@ -9,14 +25,15 @@
     }
 
     .tm-button-submit {
-        @apply mt-4 px-3 py-2 
-        text-sm font-medium text-center
+        @apply mt-4 px-3 py-2
+        text-sm font-medium
         text-gray-700 bg-white border-gray-300 
         
         hover:bg-gray-100 focus:ring focus:ring-gray-400 
         disabled:text-gray-400 disabled:bg-gray-50 disabled:border-gray-100 disabled:cursor-not-allowed
         
-        border rounded-lg shadow-sm transition-all
+        border rounded-md shadow-sm transition-all
+        self-center
         ;
     }
 
