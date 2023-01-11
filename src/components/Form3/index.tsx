@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import { CustomInput } from '../Form2/CustomInput';
 import { CustomSelect } from '../Form2/CustomSelect';
+import { schema } from './validation';
 
 type Values = {
     fullName: string;
@@ -17,6 +18,7 @@ export function Form3() {
                     fullName: '',
                     donationAmount: 0,
                 }}
+                validationSchema={schema}
                 onSubmit={async (values) => {
                     console.log({ values });
                     return new Promise((resolve) => setTimeout(resolve, 1000));
