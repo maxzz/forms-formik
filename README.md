@@ -1,6 +1,8 @@
 ### About
 
-TODO
+TBD: React Formik playground
+
+![](src/assets/previews/2023-01-11_13-47-46.png)
 
 ### Links, refs, credits
 
