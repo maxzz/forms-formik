@@ -2,28 +2,30 @@ import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import { CustomInput } from '../Form2/CustomInput';
 import { CustomSelect } from '../Form2/CustomSelect';
-import { schema } from './validation';
+import { form3Schema } from './validation';
+import { DisplayInfo } from '../UI';
 
 type Values = {
     fullName: string;
     donationAmount: number;
 };
 
+const initialValues: Values = {
+    fullName: '',
+    donationAmount: 0,
+};
+
+async function onSubmit(values: Values) {
+    console.log({ values });
+    return new Promise((resolve) => setTimeout(resolve, 1000));
+}
+
 export function Form3() {
     return (
         <div className="max-w-[54ch] mx-auto flex flex-col">
 
-            <Formik<Values>
-                initialValues={{
-                    fullName: '',
-                    donationAmount: 0,
-                }}
-                validationSchema={schema}
-                onSubmit={async (values) => {
-                    console.log({ values });
-                    return new Promise((resolve) => setTimeout(resolve, 1000));
-                }}
-            >
+            <Formik<Values> initialValues={initialValues} validationSchema={form3Schema} onSubmit={onSubmit}>
+
                 {({ values, errors, resetForm }) => (<>
                     <Form className="flex flex-col space-y-4" autoComplete="off">
                         <Field
@@ -45,19 +47,7 @@ export function Form3() {
                         </Field>
                     </Form>
 
-                    <div className="mt-4">
-                        <div className="text-slate-100 whitespace-pre">
-                            {JSON.stringify({ values, errors }, null, 4)}
-                        </div>
-
-                        <input
-                            className="mt-4 px-3 py-2 border-slate-400 hover:bg-indigo-500 border rounded active:scale-[.97]"
-                            type="button"
-                            value="Reset"
-                            onClick={() => resetForm()}
-                        />
-
-                    </div>
+                    <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
                 </>)}
 
             </Formik>

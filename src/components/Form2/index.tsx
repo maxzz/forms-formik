@@ -1,14 +1,21 @@
 import React from 'react';
 import { Formik, Form, FormikHelpers } from 'formik';
-import { advancedSchema } from './validation';
+import { form2Schema } from './validation';
 import { CustomCheckbox } from "./CustomCheckbox";
 import { CustomInput } from "./CustomInput";
 import { CustomSelect } from "./CustomSelect";
+import { DisplayInfo } from '../UI';
 
 type Values = {
     username: string;
     jobType: string;
     acceptedTos: boolean;
+};
+
+const initialValues: Values = {
+    username: "",
+    jobType: "",
+    acceptedTos: false
 };
 
 const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
@@ -18,15 +25,8 @@ const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
 
 export function Form2() {
     return (
-        <Formik<Values>
-            initialValues={{
-                username: "",
-                jobType: "",
-                acceptedTos: false
-            }}
-            validationSchema={advancedSchema}
-            onSubmit={onSubmit}
-        >
+        <Formik<Values> initialValues={initialValues} validationSchema={form2Schema} onSubmit={onSubmit}>
+
             {({ values, errors, isSubmitting, resetForm }) => (<>
                 <Form className="max-w-[54ch] mx-auto flex flex-col">
 
@@ -61,19 +61,7 @@ export function Form2() {
 
                 </Form>
 
-                <div className="px-4 text-slate-100 whitespace-pre">
-                    {JSON.stringify({ values, errors }, null, 4)}
-                </div>
-
-                <div className="">
-                    <input
-                        className="ml-4 mt-4 px-3 py-2 border-slate-400 hover:bg-indigo-500 border rounded active:scale-[.97]"
-                        type="button"
-                        value="Reset"
-                        onClick={() => resetForm()}
-                    />
-                </div>
-
+                <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
             </>)}
         </Formik>
     );

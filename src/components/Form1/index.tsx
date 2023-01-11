@@ -1,6 +1,6 @@
 import { FormikHelpers, useFormik } from "formik";
-import { ErrorHint } from "../UI";
-import { basicSchema } from "./validation";
+import { DisplayInfo, ErrorHint } from "../UI";
+import { form1Schema } from "./validation";
 
 type Values = {
     email: string;
@@ -9,25 +9,33 @@ type Values = {
     confirmPassword: string;
 };
 
+const initialValues: Values = {
+    email: '',
+    age: '',
+    password: '',
+    confirmPassword: '',
+};
+
+const initialValues2: Values = {
+    email: 'maxzz@msn.com',
+    age: '123',
+    password: '123@MeNow',
+    confirmPassword: '123@MeNow',
+};
+
 const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
     console.log(values);
     console.log(actions);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     actions.resetForm();
 };
 
 export function Form1() {
     const {
-        values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit,
-        resetForm,
+        values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit, resetForm, getFieldProps,
     } = useFormik<Values>({
-        initialValues: {
-            email: '',
-            age: '',
-            password: '',
-            confirmPassword: '',
-        },
-        validationSchema: basicSchema,
+        initialValues: initialValues2,
+        validationSchema: form1Schema,
         onSubmit,
     });
 
@@ -51,9 +59,10 @@ export function Form1() {
                 id="age"
                 type="number"
                 placeholder="Enter your age"
-                value={values.age}
-                onChange={handleChange}
-                onBlur={handleBlur}
+                {...getFieldProps("age")}
+                // value={values.age}
+                // onChange={handleChange}
+                // onBlur={handleBlur}
                 className={touched.age && errors.age ? "input-error" : ""}
             />
             <ErrorHint msg={touched.age && errors.age} />
@@ -87,23 +96,6 @@ export function Form1() {
             </button>
         </form>
 
-        <DisplayInfo values={values} errors={errors} resetForm={resetForm}/>
+        <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
     </>);
-}
-
-function DisplayInfo({ values, errors, resetForm }: { values: unknown, errors: unknown, resetForm: Function; }) {
-    return (
-        <div className="">
-            <div className="px-4 text-slate-100 whitespace-pre">
-                {JSON.stringify({ values, errors }, null, 4)}
-            </div>
-
-            <input
-                className="ml-4 mt-4 px-3 py-2 border-slate-400 hover:bg-indigo-500 border rounded active:scale-[.97]"
-                type="button"
-                value="Reset"
-                onClick={() => resetForm()}
-            />
-        </div>
-    );
 }

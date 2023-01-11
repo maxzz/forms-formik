@@ -38,7 +38,7 @@ const donationValidation =
             return true;
         });
 
-export const schema = object({
+export const form3Schema = object({
     fullName: fullNameValidation,
     donationsAmount: number().required().min(10),
     termsAndConditions: boolean().required().isTrue(),
