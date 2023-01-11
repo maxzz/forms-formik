@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import { CustomInput } from '../Form2/CustomInput';
+import { CustomSelect } from '../Form2/CustomSelect';
 
 type Values = {
     fullName: string;
@@ -26,14 +27,20 @@ export function Form3() {
                         <Field
                             name='fullName'
                             label='Full name'
-                            className='bg-red-300'
                             as={CustomInput}
                         />
 
                         <Field
                             name='donationAmount'
                             label='Donation'
-                        />
+                            as={CustomSelect}
+                        >
+                            <option value="">Please select a job type</option>
+                            <option value="developer">Developer</option>
+                            <option value="designer">Designer</option>
+                            <option value="manager">Product Manager</option>
+                            <option value="other">Other</option>
+                        </Field>
                     </Form>
 
                     <div className="px-4 text-slate-100 whitespace-pre">
