@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form, FormikHelpers } from 'formik';
-import { advancedSchema } from '../../schemas';
+import { advancedSchema } from './validation';
 import { CustomCheckbox } from "./CustomCheckbox";
 import { CustomInput } from "./CustomInput";
 import { CustomSelect } from "./CustomSelect";

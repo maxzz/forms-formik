@@ -1,6 +1,6 @@
 import { FormikHelpers, useFormik } from "formik";
-import { basicSchema } from "../../schemas";
 import { ErrorHint } from "../UI";
+import { basicSchema } from "./validation";
 
 type Values = {
     email: string;
