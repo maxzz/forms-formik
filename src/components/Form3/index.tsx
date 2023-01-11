@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, Form, Formik } from 'formik';
+import { CustomInput } from '../Form2/CustomInput';
 
 type Values = {
     fullName: string;
@@ -25,6 +26,8 @@ export function Form3() {
                         <Field
                             name='fullName'
                             label='Full name'
+                            className='bg-red-300'
+                            as={CustomInput}
                         />
 
                         <Field
