@@ -20,6 +20,7 @@ export function CustomSelect({ label, ...rest }: { label: string; name: string; 
                     `text-slate-200 bg-slate-800 
                     placeholder:text-slate-500 ring-slate-600 focus:ring-sky-600
                     ring-2 rounded-md outline-none`,
+                    "tm-input-select",
                     hasError && "ring-red-400 ring-2",
                 )}
             />
