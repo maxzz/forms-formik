@@ -26,7 +26,7 @@ export function Form3() {
 
             <Formik<Values> initialValues={initialValues} validationSchema={form3Schema} onSubmit={onSubmit}>
 
-                {({ values, errors, resetForm }) => (<>
+                {({ values, errors, isSubmitting, resetForm }) => (<>
                     <Form className="flex flex-col space-y-4" autoComplete="off">
                         <Field
                             name='fullName'
@@ -45,6 +45,10 @@ export function Form3() {
                             <option value="manager">Product Manager</option>
                             <option value="other">Other</option>
                         </Field>
+
+                        <button disabled={isSubmitting} type="submit" className="tm-button-submit">
+                            Submit
+                        </button>
                     </Form>
 
                     <DisplayInfo values={values} errors={errors} resetForm={resetForm} />

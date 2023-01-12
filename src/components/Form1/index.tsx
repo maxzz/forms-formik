@@ -1,5 +1,5 @@
 import { FormikHelpers, useFormik } from "formik";
-import { DisplayInfo, ErrorHint } from "../UI";
+import { DisplayInfo, ErrorHint, SubmitButton } from "../UI";
 import { form1Schema } from "./validation";
 
 type Values = {
@@ -26,7 +26,7 @@ const initialValues2: Values = {
 const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
     console.log(values);
     console.log(actions);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
 };
 
@@ -56,7 +56,7 @@ export function Form1() {
 
             <label htmlFor="age">Age</label>
             <input
-                id="age"
+                id="age" // <- technically it should be a name, not an id, but it works anyway
                 type="number"
                 placeholder="Enter your age"
                 {...getFieldProps("age")}
@@ -91,9 +91,7 @@ export function Form1() {
             />
             <ErrorHint msg={touched.confirmPassword && errors.confirmPassword} />
 
-            <button disabled={isSubmitting} type="submit" className="tm-button-submit">
-                Submit
-            </button>
+            <SubmitButton disabled={isSubmitting} className="tm-button-submit" />
         </form>
 
         <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
