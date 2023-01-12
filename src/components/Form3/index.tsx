@@ -53,9 +53,7 @@ export function Form3() {
                             name="termsAndConditions"
                             label="Terms and conditions"
                             as={CustomCheckbox}
-                        >
-
-                        </Field>
+                        />
 
                         <button disabled={isSubmitting} type="submit" className="tm-button-submit">
                             Submit

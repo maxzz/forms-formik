@@ -6,7 +6,7 @@ import { Form3 } from './Form3';
 
 function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAttributes<HTMLButtonElement>) {
     return (
-        <button className={classNames("px-4 py-3 w-max font-semibold text-xl", active ? "text-slate-100" : "text-slate-400 hover:text-slate-200")} {...rest}>
+        <button className={classNames("px-4 py-3 w-max font-semibold text-xl select-none", active ? "text-slate-100" : "text-slate-400 hover:text-slate-200")} {...rest}>
             {children}
         </button>
     );
