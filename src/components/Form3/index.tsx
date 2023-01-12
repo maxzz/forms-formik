@@ -1,21 +1,30 @@
 import React from 'react';
-import { Field, Form, Formik } from 'formik';
+import { Field, FieldArray, Form, Formik } from 'formik';
 import { CustomInput } from '../Form2/CustomInput';
 import { CustomSelect } from '../Form2/CustomSelect';
 import { form3Schema } from './validation';
 import { DisplayInfo } from '../UI';
 import { CustomCheckbox } from '../Form2/CustomCheckbox';
 
+type Donation = {
+    institution: string;
+    percentage: number;
+};
+
 type Values = {
     fullName: string;
     donationAmount: number;
     termsAndConditions: boolean;
+    donations: Donation[];
 };
+
+const emptyDonation: Donation = { institution: '', percentage: 0 };
 
 const initialValues: Values = {
     fullName: '',
     donationAmount: 0,
     termsAndConditions: true,
+    donations: [emptyDonation],
 };
 
 async function onSubmit(values: Values) {
@@ -54,6 +63,37 @@ export function Form3() {
                             label="Terms and conditions"
                             as={CustomCheckbox}
                         />
+
+                        <FieldArray name="donations">
+                            {({ push, move }) => (<>
+
+                                <div className="">
+                                    All donation
+                                </div>
+
+                                {values.donations.map((_donation, index) => (
+                                    <div className="flex items-center space-x-2">
+                                        <Field
+                                            name={`donations[${index}].institution`}
+                                            label="Institution"
+                                            as={CustomInput}
+                                        />
+                                        <Field
+                                            name={`donations[${index}].percentage`}
+                                            label="Percentage"
+                                            type="number"
+                                            as={CustomInput}
+                                        />
+                                        <button className="px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]">x</button>
+                                    </div>
+                                ))}
+
+                                <div className="">
+                                    <button className="px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]">Add donation</button>
+                                </div>
+
+                            </>)}
+                        </FieldArray>
 
                         <button disabled={isSubmitting} type="submit" className="tm-button-submit">
                             Submit
