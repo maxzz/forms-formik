@@ -13,6 +13,7 @@ export function CustomInput({ label, ...rest }: { label: string; name: string; }
             </span>
 
             <input
+                type="text"
                 {...field}
                 {...rest}
                 className={classNames(

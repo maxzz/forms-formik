@@ -59,10 +59,7 @@ export function Form1() {
                 id="age" // <- technically it should be a name, not an id, but it works anyway
                 type="number"
                 placeholder="Enter your age"
-                {...getFieldProps("age")}
-                // value={values.age}
-                // onChange={handleChange}
-                // onBlur={handleBlur}
+                {...getFieldProps("age")} // value={values.age} onChange={handleChange} onBlur={handleBlur}
                 className={touched.age && errors.age ? "input-error" : ""}
             />
             <ErrorHint msg={touched.age && errors.age} />

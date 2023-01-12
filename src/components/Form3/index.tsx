@@ -4,15 +4,18 @@ import { CustomInput } from '../Form2/CustomInput';
 import { CustomSelect } from '../Form2/CustomSelect';
 import { form3Schema } from './validation';
 import { DisplayInfo } from '../UI';
+import { CustomCheckbox } from '../Form2/CustomCheckbox';
 
 type Values = {
     fullName: string;
     donationAmount: number;
+    termsAndConditions: boolean;
 };
 
 const initialValues: Values = {
     fullName: '',
     donationAmount: 0,
+    termsAndConditions: true,
 };
 
 async function onSubmit(values: Values) {
@@ -44,6 +47,14 @@ export function Form3() {
                             <option value="designer">Designer</option>
                             <option value="manager">Product Manager</option>
                             <option value="other">Other</option>
+                        </Field>
+
+                        <Field
+                            name="termsAndConditions"
+                            label="Terms and conditions"
+                            as={CustomCheckbox}
+                        >
+
                         </Field>
 
                         <button disabled={isSubmitting} type="submit" className="tm-button-submit">

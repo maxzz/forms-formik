@@ -33,7 +33,6 @@ export function Form2() {
                     <CustomInput
                         label="Username"
                         name="username"
-                        type="text"
                         placeholder="Enter your username"
                     />
 
@@ -51,7 +50,6 @@ export function Form2() {
 
                     <CustomCheckbox
                         label="I accept the terms of service"
-                        type="checkbox"
                         name="acceptedTos"
                     />
 
