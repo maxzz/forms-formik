@@ -65,31 +65,45 @@ export function Form3() {
                         />
 
                         <FieldArray name="donations">
-                            {({ push, move }) => (<>
+                            {({ push, remove }) => (<>
 
                                 <div className="">
                                     All donation
                                 </div>
 
-                                {values.donations.map((_donation, index) => (
+                                {values.donations.map((_donation, idx) => (
                                     <div className="flex items-center space-x-2">
                                         <Field
-                                            name={`donations[${index}].institution`}
+                                            name={`donations[${idx}].institution`}
                                             label="Institution"
                                             as={CustomInput}
                                         />
                                         <Field
-                                            name={`donations[${index}].percentage`}
+                                            name={`donations[${idx}].percentage`}
                                             label="Percentage"
                                             type="number"
                                             as={CustomInput}
                                         />
-                                        <button className="px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]">x</button>
+                                        <button
+                                            className="px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]"
+                                            onClick={() => {
+                                                remove(idx);
+                                            }}
+                                        >
+                                            x
+                                        </button>
                                     </div>
                                 ))}
 
                                 <div className="">
-                                    <button className="px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]">Add donation</button>
+                                    <button
+                                        className="px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]"
+                                        onClick={() => {
+                                            push(emptyDonation);
+                                        }}
+                                    >
+                                        Add donation
+                                    </button>
                                 </div>
 
                             </>)}
