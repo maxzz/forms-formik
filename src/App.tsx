@@ -2,7 +2,7 @@ import { Page } from "./components/Page";
 
 export function App() {
     return (
-        <div className="h-screen bg-gradient-to-b from-indigo-900 to-indigo-500 grid grid-cols-[max-content_1fr]">
+        <div className="min-h-screen bg-gradient-to-b from-indigo-900 to-indigo-500 grid grid-cols-[max-content_1fr]">
 
             <div className="flex flex-col">
                 <header className="px-1 py-0.5 text-[0.5rem] text-indigo-500 text-end">

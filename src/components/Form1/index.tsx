@@ -39,8 +39,9 @@ export function Form1() {
         onSubmit,
     });
 
-    return (<>
-        <form onSubmit={handleSubmit} autoComplete="off" className="tm-form">
+    return (
+    <div className="h-full flex flex-col">
+        <form onSubmit={handleSubmit} autoComplete="off" className="tm-form flex-1">
 
             <label htmlFor="email">Email</label>
             <input
@@ -92,5 +93,6 @@ export function Form1() {
         </form>
 
         <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
-    </>);
+    </div>
+    );
 }

@@ -23,9 +23,9 @@ export function Page() {
                 <TabButton active={currentForm === 2} onClick={() => setCurrentForm(2)}>FieldArray</TabButton>
             </div>
 
-            {currentForm === 0 && <div className="px-4"> <Form1 /> </div>}
-            {currentForm === 1 && <div className="px-4"> <Form2 /> </div>}
-            {currentForm === 2 && <div className="px-4"> <Form3 /> </div>}
+            {currentForm === 0 && <div className="px-4 h-full"> <Form1 /> </div>}
+            {currentForm === 1 && <div className="px-4 h-full"> <Form2 /> </div>}
+            {currentForm === 2 && <div className="px-4 h-full"> <Form3 /> </div>}
         </div>
     );
 }
