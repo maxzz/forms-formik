@@ -15,7 +15,7 @@ export function CustomInput({ label, ...rest }: { label: string; name: string; }
     const hasError = meta.touched && meta.error;
     return (<>
         <label className="flex flex-col select-none">
-            <span className="mt-4 mb-1 block font-semibold text-left">
+            <span className="mb-1 block font-semibold text-left">
                 {label}
             </span>
 
