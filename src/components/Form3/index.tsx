@@ -68,11 +68,11 @@ export function Form3() {
                             {({ push, remove }) => (<>
 
                                 <div className="">
-                                    All donation
+                                    All donations
                                 </div>
 
                                 {values.donations.map((_donation, idx) => (
-                                    <div className="flex items-center space-x-2">
+                                    <div className="flex items-center gap-2" key={idx}>
                                         <Field
                                             name={`donations[${idx}].institution`}
                                             label="Institution"
@@ -85,10 +85,11 @@ export function Form3() {
                                             as={CustomInput}
                                         />
                                         <button
-                                            className="px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]"
+                                            className="self-end px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]"
                                             onClick={() => {
                                                 remove(idx);
                                             }}
+                                            type="button"
                                         >
                                             x
                                         </button>
@@ -101,6 +102,7 @@ export function Form3() {
                                         onClick={() => {
                                             push(emptyDonation);
                                         }}
+                                        type="button"
                                     >
                                         Add donation
                                     </button>
