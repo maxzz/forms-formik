@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from "react";
 import { useField } from "formik";
-import { ErrorHint } from "../../ui";
-import { classNames } from "../../utils/classnames";
+import { ErrorHint } from ".";
+import { classNames } from "../utils/classnames";
 
 export function CustomCheckbox({ label, ...rest }: { label: string; name: string; } & InputHTMLAttributes<HTMLInputElement>) {
     const [field, meta] = useField(rest);

@@ -1,10 +1,6 @@
-import React from 'react';
 import { Field, FieldArray, Form, Formik } from 'formik';
-import { CustomInput } from '../Form2/CustomInput';
-import { CustomSelect } from '../Form2/CustomSelect';
 import { form3Schema } from './validation';
-import { DisplayInfo } from '../../ui';
-import { CustomCheckbox } from '../Form2/CustomCheckbox';
+import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '../../ui';
 
 type Donation = {
     institution: string;

@@ -1,10 +1,6 @@
-import React from 'react';
 import { Formik, Form, FormikHelpers } from 'formik';
 import { form2Schema } from './validation';
-import { CustomCheckbox } from "./CustomCheckbox";
-import { CustomInput } from "./CustomInput";
-import { CustomSelect } from "./CustomSelect";
-import { DisplayInfo } from '../../ui';
+import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '../../ui';
 
 type Values = {
     username: string;
@@ -39,7 +35,6 @@ export function Form2() {
                     <CustomSelect
                         label="Job Type"
                         name="jobType"
-                        placeholder="Please select a job"
                     >
                         <option value="">Please select a job type</option>
                         <option value="developer">Developer</option>

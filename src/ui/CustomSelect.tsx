@@ -1,7 +1,7 @@
 import { SelectHTMLAttributes } from "react";
 import { useField } from "formik";
-import { ErrorHint } from "../../ui";
-import { classNames } from "../../utils/classnames";
+import { ErrorHint } from ".";
+import { classNames } from "../utils/classnames";
 
 export function CustomSelect({ label, ...rest }: { label: string; name: string; } & SelectHTMLAttributes<HTMLSelectElement>) {
     const [field, meta] = useField(rest);
