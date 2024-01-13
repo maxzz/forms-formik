@@ -3,7 +3,7 @@ import { Field, FieldArray, Form, Formik } from 'formik';
 import { CustomInput } from '../Form2/CustomInput';
 import { CustomSelect } from '../Form2/CustomSelect';
 import { form3Schema } from './validation';
-import { DisplayInfo } from '../UI';
+import { DisplayInfo } from '../../ui';
 import { CustomCheckbox } from '../Form2/CustomCheckbox';
 
 type Donation = {

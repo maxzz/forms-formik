@@ -1,5 +1,5 @@
 import { FormikHelpers, useFormik } from "formik";
-import { DisplayInfo, ErrorHint, SubmitButton } from "../UI";
+import { DisplayInfo, ErrorHint, SubmitButton } from "../../ui";
 import { form1Schema } from "./validation";
 
 type Values = {

@@ -4,7 +4,7 @@ import { form2Schema } from './validation';
 import { CustomCheckbox } from "./CustomCheckbox";
 import { CustomInput } from "./CustomInput";
 import { CustomSelect } from "./CustomSelect";
-import { DisplayInfo } from '../UI';
+import { DisplayInfo } from '../../ui';
 
 type Values = {
     username: string;

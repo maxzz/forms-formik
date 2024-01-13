@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from "react";
-import { classNames } from "../../utils/classnames";
+import { classNames } from "../utils/classnames";
 
 export function SubmitButton({className, ...rest}: ButtonHTMLAttributes<HTMLButtonElement>) {
     return (
