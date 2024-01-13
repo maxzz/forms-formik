@@ -3,6 +3,13 @@ import { useField } from "formik";
 import { ErrorHint } from "../../ui";
 import { classNames } from "../../utils/classnames";
 
+const customInputClasses = "\
+px-3 py-2 w-full \
+text-slate-200 bg-indigo-900 placeholder:text-slate-500 \
+ring-indigo-950/50 focus:ring-indigo-800 ring-1 \
+rounded shadow shadow-indigo-950 outline-none \
+";
+
 export function CustomInput({ label, ...rest }: { label: string; name: string; } & InputHTMLAttributes<HTMLInputElement>) {
     const [field, meta] = useField(rest);
     const hasError = meta.touched && meta.error;
@@ -17,10 +24,7 @@ export function CustomInput({ label, ...rest }: { label: string; name: string; }
                 {...field}
                 {...rest}
                 className={classNames(
-                    "px-3 py-2 w-full rounded",
-                    `text-slate-200 bg-slate-800 
-                    placeholder:text-slate-500 ring-slate-600 focus:ring-sky-600
-                    ring-2 rounded-md outline-none`,
+                    customInputClasses,
                     hasError && "ring-red-400 ring-2",
                 )}
             />
