@@ -15,13 +15,13 @@ export function CustomInput({ className, label, ...rest }: { label: string; name
     const hasError = meta.touched && meta.error;
     return (<>
         <label className={className}>
-            <span className="row-start-1 mb-1 block font-semibold text-left select-none">
+            <span className=" mb-1 block font-semibold text-left select-none">
                 {label}
             </span>
 
             <input
                 type="text"
-                className={classNames("row-start-2", customInputClasses, hasError && "ring-red-400 ring-2",)}
+                className={classNames("", customInputClasses, hasError && "ring-red-400 ring-1",)}
                 {...field}
                 {...rest}
             />

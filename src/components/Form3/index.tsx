@@ -4,16 +4,16 @@ import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '../../ui
 import { Fragment, InputHTMLAttributes } from 'react';
 import { classNames } from '../../utils/classnames';
 
-type Donation = {
-    institution: string;
-    percentage: number;
-};
-
 type Values = {
     fullName: string;
     donationAmount: number;
     termsAndConditions: boolean;
     donations: Donation[];
+};
+
+type Donation = {
+    institution: string;
+    percentage: number;
 };
 
 const emptyDonation: Donation = { institution: '', percentage: 0 };
@@ -31,7 +31,7 @@ async function onSubmit(values: Values) {
 }
 
 function SubCustomInput({ className, ...rest }: { label: string; name: string; } & InputHTMLAttributes<HTMLInputElement>) {
-    return <CustomInput className={classNames("grid grid-rows-subgrid row-span-full", className)} {...rest} />;
+    return <CustomInput className={classNames("row-span-full grid grid-rows-subgrid", className)} {...rest} />;
 }
 
 export function Form3() {
@@ -55,9 +55,9 @@ export function Form3() {
                                     All donations
                                 </div>
 
-                                <div className="grid grid-rows-[auto,1fr,auto] gap-2">
+                                <div className="">
                                     {values.donations.map((_donation, idx) => (
-                                        <div className="flex" key={idx}>
+                                        <div className="grid grid-rows-[auto,1fr,auto] gap-2" key={idx}>
                                             <Field
                                                 name={`donations[${idx}].institution`}
                                                 label={`Institution ${idx}`}
