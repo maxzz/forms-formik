@@ -5,9 +5,11 @@ import { classNames } from "../utils/classnames";
 
 const customInputClasses = "\
 px-3 py-2 w-full \
-text-slate-200 bg-indigo-900 placeholder:text-slate-500 \
-ring-indigo-950/50 focus:ring-indigo-800 ring-1 \
-rounded shadow shadow-indigo-950 outline-none \
+text-slate-200 bg-indigo-900 \
+placeholder:text-slate-500 \
+ring-indigo-950/50 focus:ring-indigo-400 focus:ring-2 ring-1 \
+shadow-indigo-950 \
+rounded shadow outline-none \
 ";
 
 export function CustomInput({ className, label, ...rest }: { label: string; name: string; } & InputHTMLAttributes<HTMLInputElement>) {

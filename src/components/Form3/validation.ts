@@ -41,6 +41,6 @@ const donationValidation =
 export const form3Schema = object({
     fullName: fullNameValidation,
     donationsAmount: number().required().min(10),
-    termsAndConditions: boolean().required().isTrue(),
+    termsAndConditions: boolean().required().isTrue('Please accept the terms of use and conditions'),
     donations: donationValidation,
 });

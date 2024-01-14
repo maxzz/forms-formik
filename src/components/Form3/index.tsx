@@ -71,7 +71,14 @@ export function Form3() {
                                             />
                                             <div className="row-span-full grid grid-rows-subgrid">
                                                 <button
-                                                    className="row-start-2 px-3 py-2 text-indigo-300 bg-indigo-900 ring-indigo-950/50 shadow-indigo-950 hover:bg-red-500 ring-1 rounded shadow active:scale-[.97]"
+                                                    className="row-start-2 
+                                                    px-3 py-2 
+                                                    text-indigo-300 bg-indigo-900 
+                                                    ring-indigo-950/50 hover:bg-red-500 ring-1 
+                                                    focus:ring-indigo-400 focus:ring-2 
+                                                    shadow-indigo-950
+                                                    outline-none
+                                                    rounded shadow active:scale-[.97]"
                                                     onClick={() => {
                                                         remove(idx);
                                                     }}
@@ -86,7 +93,13 @@ export function Form3() {
 
                                 <div className="">
                                     <button
-                                        className="px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]"
+                                        className="px-4 py-3 
+                                        text-indigo-300 bg-indigo-900 
+                                        ring-indigo-950/50 hover:bg-indigo-800 ring-1 
+                                        focus:ring-indigo-400 focus:ring-2 
+                                        shadow-indigo-950
+                                        outline-none
+                                        rounded-md shadow active:scale-[.97]"
                                         onClick={() => {
                                             push(emptyDonation);
                                         }}
