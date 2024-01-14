@@ -69,15 +69,15 @@ export function Form3() {
                                                 type="number"
                                                 as={SubCustomInput}
                                             />
-                                            <div className="grid grid-rows-subgrid row-span-full">
+                                            <div className="row-span-full grid grid-rows-subgrid">
                                                 <button
-                                                    className="row-start-2 px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]"
+                                                    className="row-start-2 px-3 py-2 text-indigo-300 bg-indigo-900 ring-indigo-950/50 shadow-indigo-950 hover:bg-red-500 ring-1 rounded shadow active:scale-[.97]"
                                                     onClick={() => {
                                                         remove(idx);
                                                     }}
                                                     type="button"
                                                 >
-                                                    x
+                                                    ✕
                                                 </button>
                                             </div>
                                         </div>

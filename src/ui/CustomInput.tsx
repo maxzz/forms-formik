@@ -21,7 +21,7 @@ export function CustomInput({ className, label, ...rest }: { label: string; name
 
             <input
                 type="text"
-                className={classNames("", customInputClasses, hasError && "ring-red-400 ring-1",)}
+                className={classNames("", customInputClasses, hasError && "ring-red-400",)}
                 {...field}
                 {...rest}
             />
