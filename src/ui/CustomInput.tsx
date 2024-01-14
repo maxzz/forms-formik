@@ -10,23 +10,20 @@ ring-indigo-950/50 focus:ring-indigo-800 ring-1 \
 rounded shadow shadow-indigo-950 outline-none \
 ";
 
-export function CustomInput({ label, ...rest }: { label: string; name: string; } & InputHTMLAttributes<HTMLInputElement>) {
+export function CustomInput({ className, label, ...rest }: { label: string; name: string; } & InputHTMLAttributes<HTMLInputElement>) {
     const [field, meta] = useField(rest);
     const hasError = meta.touched && meta.error;
     return (<>
-        <label className="flex flex-col select-none">
-            <span className="mb-1 block font-semibold text-left">
+        <label className={className}>
+            <span className="row-start-1 mb-1 block font-semibold text-left select-none">
                 {label}
             </span>
 
             <input
                 type="text"
+                className={classNames("row-start-2", customInputClasses, hasError && "ring-red-400 ring-2",)}
                 {...field}
                 {...rest}
-                className={classNames(
-                    customInputClasses,
-                    hasError && "ring-red-400 ring-2",
-                )}
             />
 
             <ErrorHint msg={hasError} />

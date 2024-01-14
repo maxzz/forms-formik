@@ -1,6 +1,8 @@
 import { Field, FieldArray, Form, Formik } from 'formik';
 import { form3Schema } from './validation';
 import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '../../ui';
+import { Fragment, InputHTMLAttributes } from 'react';
+import { classNames } from '../../utils/classnames';
 
 type Donation = {
     institution: string;
@@ -28,6 +30,10 @@ async function onSubmit(values: Values) {
     return new Promise((resolve) => setTimeout(resolve, 1000));
 }
 
+function SubCustomInput({ className, ...rest }: { label: string; name: string; } & InputHTMLAttributes<HTMLInputElement>) {
+    return <CustomInput className={classNames("grid grid-rows-subgrid row-span-full", className)} {...rest} />;
+}
+
 export function Form3() {
     return (
         <div className="max-w-[54ch] mx-auto flex flex-col">
@@ -41,6 +47,57 @@ export function Form3() {
                             label='Full name'
                             as={CustomInput}
                         />
+
+                        <FieldArray name="donations">
+                            {({ push, remove }) => (<>
+
+                                <div className="">
+                                    All donations
+                                </div>
+
+                                <div className="grid grid-rows-[auto,1fr,auto] gap-2">
+                                    {values.donations.map((_donation, idx) => (
+                                        <div className="flex" key={idx}>
+                                            <Field
+                                                name={`donations[${idx}].institution`}
+                                                label={`Institution ${idx}`}
+                                                as={SubCustomInput}
+                                            />
+                                            <Field
+                                                name={`donations[${idx}].percentage`}
+                                                label="Percentage"
+                                                type="number"
+                                                as={SubCustomInput}
+                                            />
+                                            <div className="grid grid-rows-subgrid row-span-full">
+                                                <button
+                                                    className="row-start-2 px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]"
+                                                    onClick={() => {
+                                                        remove(idx);
+                                                    }}
+                                                    type="button"
+                                                >
+                                                    x
+                                                </button>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="">
+                                    <button
+                                        className="px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]"
+                                        onClick={() => {
+                                            push(emptyDonation);
+                                        }}
+                                        type="button"
+                                    >
+                                        Add donation
+                                    </button>
+                                </div>
+
+                            </>)}
+                        </FieldArray>
 
                         <Field
                             name='donationAmount'
@@ -59,53 +116,6 @@ export function Form3() {
                             label="Terms and conditions"
                             as={CustomCheckbox}
                         />
-
-                        <FieldArray name="donations">
-                            {({ push, remove }) => (<>
-
-                                <div className="">
-                                    All donations
-                                </div>
-
-                                {values.donations.map((_donation, idx) => (
-                                    <div className="flex items-center gap-2" key={idx}>
-                                        <Field
-                                            name={`donations[${idx}].institution`}
-                                            label="Institution"
-                                            as={CustomInput}
-                                        />
-                                        <Field
-                                            name={`donations[${idx}].percentage`}
-                                            label="Percentage"
-                                            type="number"
-                                            as={CustomInput}
-                                        />
-                                        <button
-                                            className="self-end px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]"
-                                            onClick={() => {
-                                                remove(idx);
-                                            }}
-                                            type="button"
-                                        >
-                                            x
-                                        </button>
-                                    </div>
-                                ))}
-
-                                <div className="">
-                                    <button
-                                        className="px-4 py-2 bg-indigo-900 border-indigo-500 hover:bg-indigo-800 border rounded active:scale-[.97]"
-                                        onClick={() => {
-                                            push(emptyDonation);
-                                        }}
-                                        type="button"
-                                    >
-                                        Add donation
-                                    </button>
-                                </div>
-
-                            </>)}
-                        </FieldArray>
 
                         <button disabled={isSubmitting} type="submit" className="tm-button-submit">
                             Submit
