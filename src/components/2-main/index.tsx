@@ -15,7 +15,7 @@ function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAtt
 }
 
 function LeftSide() {
-    const [currentForm, setCurrentForm] = useState(2);
+    const [currentForm, setCurrentForm] = useState(1);
     return (
         <div className="h-full text-sm text-slate-100 flex flex-col">
 
@@ -45,7 +45,7 @@ export function RightSide() {
 
 export function MainSection() {
     return (
-        <div className="grid grid-cols-[auto,1fr]">
+        <div className="grid grid-cols-[auto,1fr] overflow-auto smallscroll">
             <LeftSide />
             <RightSide />
         </div>
