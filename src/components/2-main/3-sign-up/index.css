@@ -1,21 +1,25 @@
 @layer components {
     .tm-form {
-        @apply max-w-[54ch] mx-auto flex flex-col;
+        @apply max-w-[54ch] 
+        /* mx-auto  */
+        flex flex-col;
     }
 
     .tm-form label {
-        @apply mt-4 mb-1 block font-semibold text-left;
+        @apply mt-0 mb-1 block font-semibold text-left;
     }
 
     .tm-form input {
         @apply px-3 py-2 w-full 
-        text-slate-200 bg-slate-800 
-        placeholder:text-slate-500 ring-slate-600 focus:ring-sky-600
-        ring-2 rounded-md outline-none;
+        text-slate-200 bg-indigo-900
+        placeholder:text-slate-500 
+        ring-indigo-950/50 focus:ring-indigo-400 focus:ring-2 ring-1
+        shadow-indigo-950
+        rounded shadow outline-none;
     }
 
     .tm-form input.input-error {
-        @apply ring-red-400 ring-2;
+        @apply ring-red-400 ring-1;
     }
 
     .tm-input-select {

@@ -8,7 +8,13 @@ import { classNames } from '../../utils/classnames';
 
 function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAttributes<HTMLButtonElement>) {
     return (
-        <button className={classNames("px-4 py-3 w-max font-semibold text-xl select-none", active ? "text-slate-100" : "text-slate-400 hover:text-slate-200")} {...rest}>
+        <button
+            className={classNames(
+                "px-4 pt-3 pb-4 text-xl font-semibold select-none",
+                active ? "text-slate-100" : "text-slate-500 hover:text-slate-200 500 hover:bg-indigo-700/50"
+            )}
+            {...rest}
+        >
             {children}
         </button>
     );
@@ -25,7 +31,7 @@ function LeftSide() {
                 <TabButton active={currentForm === 2} onClick={() => setCurrentForm(2)}>Sign up</TabButton>
             </div>
 
-            <div className="py-4 min-w-[440px]">
+            <div className="py-4 h-full min-w-[440px]">
                 {currentForm === 0 && <div className="px-4 h-full"> <Form1Select /> </div>}
                 {currentForm === 1 && <div className="px-4 h-full"> <Form2FieldArray /> </div>}
                 {currentForm === 2 && <div className="px-4 h-full"> <Form3Signup /> </div>}
@@ -37,7 +43,7 @@ function LeftSide() {
 export function RightSide() {
     const { values: text } = useSnapshot(appStore).formState;
     return (
-        <div className="p-1 text-xs text-indigo-300 bg-slate-900 whitespace-pre overflow-auto smallscroll">
+        <div className="pl-3 py-0.5 text-xs text-indigo-300 bg-slate-900 whitespace-pre overflow-auto smallscroll">
             {text}
         </div>
     );
@@ -45,7 +51,8 @@ export function RightSide() {
 
 export function MainSection() {
     return (
-        <div className="grid grid-cols-[auto,1fr] overflow-auto smallscroll">
+        <div className="grid grid-cols-[auto,auto,1fr] overflow-auto smallscroll">
+            <div className="w-4 bg-slate-900"></div>
             <LeftSide />
             <RightSide />
         </div>

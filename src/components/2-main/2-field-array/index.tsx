@@ -36,7 +36,7 @@ function SubCustomInput({ className, ...rest }: { label: string; name: string; }
 
 export function Form2FieldArray() {
     return (
-        <div className="max-w-[54ch] mx-auto flex flex-col">
+        <div className="max-w-[54ch] h-full mx-auto flex flex-col justify-between">
 
             <Formik<Values> initialValues={initialValues} validationSchema={form3Schema} onSubmit={onSubmit}>
 

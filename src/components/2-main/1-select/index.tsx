@@ -21,41 +21,36 @@ const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
 
 export function Form1Select() {
     return (
-        <Formik<Values> initialValues={initialValues} validationSchema={form2Schema} onSubmit={onSubmit}>
-
-            {({ values, errors, isSubmitting, resetForm }) => (<>
-                <Form className="max-w-[54ch] mx-auto flex flex-col">
-
-                    <CustomInput
-                        label="Username"
-                        name="username"
-                        placeholder="Enter your username"
-                    />
-
-                    <CustomSelect
-                        label="Job Type"
-                        name="jobType"
-                    >
-                        <option value="">Please select a job type</option>
-                        <option value="developer">Developer</option>
-                        <option value="designer">Designer</option>
-                        <option value="manager">Product Manager</option>
-                        <option value="other">Other</option>
-                    </CustomSelect>
-
-                    <div className="mt-4">
-                        <CustomCheckbox
-                            label="I accept the terms of service"
-                            name="acceptedTos"
+        <div className="max-w-[54ch] h-full flex flex-col items-stretch justify-between">
+            <Formik<Values> initialValues={initialValues} validationSchema={form2Schema} onSubmit={onSubmit}>
+                {({ values, errors, isSubmitting, resetForm }) => (<>
+                    <Form className="flex flex-col">
+                        <CustomInput
+                            label="Username"
+                            name="username"
+                            placeholder="Enter your username"
                         />
-                    </div>
-
-                    <SubmitButton disabled={isSubmitting} className="self-end" />
-                </Form>
-
-                <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
-            </>)}
-
-        </Formik>
+                        <CustomSelect
+                            label="Job Type"
+                            name="jobType"
+                        >
+                            <option value="">Please select a job type</option>
+                            <option value="developer">Developer</option>
+                            <option value="designer">Designer</option>
+                            <option value="manager">Product Manager</option>
+                            <option value="other">Other</option>
+                        </CustomSelect>
+                        <div className="mt-4">
+                            <CustomCheckbox
+                                label="I accept the terms of service"
+                                name="acceptedTos"
+                            />
+                        </div>
+                        <SubmitButton disabled={isSubmitting} className="self-end" />
+                    </Form>
+                    <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
+                </>)}
+            </Formik>
+        </div>
     );
 }
