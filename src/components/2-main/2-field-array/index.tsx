@@ -1,8 +1,8 @@
 import { Field, FieldArray, Form, Formik } from 'formik';
 import { form3Schema } from './validation';
-import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '../../ui';
+import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '../../../ui';
 import { Fragment, InputHTMLAttributes } from 'react';
-import { classNames } from '../../utils/classnames';
+import { classNames } from '../../../utils/classnames';
 
 type Values = {
     fullName: string;

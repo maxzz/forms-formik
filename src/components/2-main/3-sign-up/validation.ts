@@ -1,5 +1,5 @@
 import { object } from "yup";
-import { emailValidation, ageValidation, passwordValidation, passwordConfirmValidation } from "../../schemas";
+import { emailValidation, ageValidation, passwordValidation, passwordConfirmValidation } from "../../../schemas";
 
 export const form1Schema = object().shape({
     email: emailValidation,

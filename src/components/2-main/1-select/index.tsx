@@ -1,6 +1,6 @@
 import { Formik, Form, FormikHelpers } from 'formik';
 import { form2Schema } from './validation';
-import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '../../ui';
+import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '../../../ui';
 
 type Values = {
     username: string;
