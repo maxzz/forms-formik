@@ -1,5 +1,5 @@
 import { FormikHelpers, useFormik } from "formik";
-import { DisplayInfo, ErrorHint, SubmitButton } from "../../../ui";
+import { DisplayInfo, ErrorHint, SubmitButton } from "@/ui";
 import { form1Schema } from "./validation";
 
 type Values = {
@@ -89,7 +89,7 @@ export function Form3Signup() {
             />
             <ErrorHint msg={touched.confirmPassword && errors.confirmPassword} />
 
-            <SubmitButton disabled={isSubmitting} className="tm-button-submit" />
+            <SubmitButton disabled={isSubmitting} className="tm-button-submit outline-none self-end" />
         </form>
 
         <DisplayInfo values={values} errors={errors} resetForm={resetForm} />

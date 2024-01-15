@@ -34,10 +34,10 @@
         text-sm font-medium
         text-gray-700 bg-white border-gray-300 
         
-        hover:bg-gray-100 focus:ring focus:ring-gray-400 
+        /* hover:bg-gray-100 focus:ring focus:ring-gray-400 
         disabled:text-gray-400 disabled:bg-gray-50 disabled:border-gray-100 disabled:cursor-not-allowed
         
-        border rounded-md shadow-sm transition-all
+        border rounded-md shadow-sm transition-all */
         self-center
         ;
     }

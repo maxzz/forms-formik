@@ -1,6 +1,6 @@
 import { Formik, Form, FormikHelpers } from 'formik';
 import { form2Schema } from './validation';
-import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '@/ui';
+import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo, SubmitButton } from '@/ui';
 
 type Values = {
     username: string;
@@ -50,10 +50,7 @@ export function Form1Select() {
                         />
                     </div>
 
-                    <button disabled={isSubmitting} type="submit" className="tm-button-submit">
-                        Submit
-                    </button>
-
+                    <SubmitButton disabled={isSubmitting} className="self-end" />
                 </Form>
 
                 <DisplayInfo values={values} errors={errors} resetForm={resetForm} />

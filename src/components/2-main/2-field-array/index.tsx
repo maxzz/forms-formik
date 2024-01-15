@@ -130,11 +130,7 @@ export function Form2FieldArray() {
                             as={CustomCheckbox}
                         />
 
-                        <SubmitButton disabled={isSubmitting} className="self-center" />
-
-                        {/* <button disabled={isSubmitting} type="submit" className="tm-button-submit">
-                            Submit
-                        </button> */}
+                        <SubmitButton disabled={isSubmitting} className="self-end" />
                     </Form>
 
                     <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
