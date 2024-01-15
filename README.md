@@ -1,8 +1,8 @@
 ### About
 
-Playground for React forms with Formik
+Playground for React forms with Formik library.
 
-![](src/assets/previews/2023-01-11_13-47-46.png)
+![](src/assets/previews/2024-01-15_15-00-33.png)
 
 ### Links, refs, credits
 

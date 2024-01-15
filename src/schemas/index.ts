@@ -11,5 +11,5 @@ export const passwordValidation = string()
     .required("Required");
 
 export const passwordConfirmValidation = string()
-    .oneOf([ref("password"), null], "Passwords must match")
+    .oneOf([ref("password"), ""], "Passwords must match")
     .required("Required");
