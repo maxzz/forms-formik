@@ -1,7 +1,7 @@
 import { SelectHTMLAttributes } from "react";
 import { useField } from "formik";
-import { ErrorHint } from ".";
-import { classNames } from "../utils/classnames";
+import { ErrorHint } from "..";
+import { classNames } from "../../utils/classnames";
 
 const customSelectClasses = "\
 px-3 py-2 w-full \

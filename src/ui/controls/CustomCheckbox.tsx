@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from "react";
 import { useField } from "formik";
-import { ErrorHint } from ".";
-import { classNames } from "../utils/classnames";
+import { ErrorHint } from "..";
+import { classNames } from "../../utils/classnames";
 
 const customCheckboxClasses = "\
 w-5 h-5 \

@@ -1,4 +1,6 @@
 import { HTMLAttributes, useState } from 'react';
+import { useSnapshot } from "valtio";
+import { appStore } from '@/store';
 import { Form1Select } from './1-select';
 import { Form2FieldArray } from './2-field-array';
 import { Form3Signup } from './3-sign-up';
@@ -12,7 +14,7 @@ function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAtt
     );
 }
 
-export function MainSection() {
+function LeftSide() {
     const [currentForm, setCurrentForm] = useState(2);
     return (
         <div className="h-full text-sm text-slate-100 flex flex-col">
@@ -32,3 +34,20 @@ export function MainSection() {
     );
 }
 
+export function RightSide() {
+    const { values: text } = useSnapshot(appStore).formState;
+    return (
+        <div className="p-1 text-xs text-indigo-300 bg-slate-900 whitespace-pre">
+            {text}
+        </div>
+    );
+}
+
+export function MainSection() {
+    return (
+        <div className="grid grid-cols-[auto,1fr]">
+            <LeftSide />
+            <RightSide />
+        </div>
+    );
+}

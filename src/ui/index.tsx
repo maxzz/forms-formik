@@ -1,7 +1,7 @@
-export * from './CustomInput';
-export * from './CustomSelect';
-export * from './CustomCheckbox';
+export * from './controls/CustomInput';
+export * from './controls/CustomSelect';
+export * from './controls/CustomCheckbox';
 
-export * from './ErrorHint';
+export * from './controls/ErrorHint';
 export * from './DisplayInfo';
 export * from './SubmitButton';
