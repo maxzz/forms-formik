@@ -1,8 +1,8 @@
+import { InputHTMLAttributes } from 'react';
 import { Field, FieldArray, Form, Formik } from 'formik';
 import { form3Schema } from './validation';
-import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '../../../ui';
-import { Fragment, InputHTMLAttributes } from 'react';
-import { classNames } from '../../../utils/classnames';
+import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo, SubmitButton } from '@/ui';
+import { classNames } from '@/utils/classnames';
 
 type Values = {
     fullName: string;
@@ -130,9 +130,11 @@ export function Form2FieldArray() {
                             as={CustomCheckbox}
                         />
 
-                        <button disabled={isSubmitting} type="submit" className="tm-button-submit">
+                        <SubmitButton disabled={isSubmitting} className="self-center" />
+
+                        {/* <button disabled={isSubmitting} type="submit" className="tm-button-submit">
                             Submit
-                        </button>
+                        </button> */}
                     </Form>
 
                     <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
