@@ -37,7 +37,7 @@ function LeftSide() {
 export function RightSide() {
     const { values: text } = useSnapshot(appStore).formState;
     return (
-        <div className="p-1 text-xs text-indigo-300 bg-slate-900 whitespace-pre">
+        <div className="p-1 text-xs text-indigo-300 bg-slate-900 whitespace-pre overflow-auto smallscroll">
             {text}
         </div>
     );

@@ -43,10 +43,12 @@ export function Form1Select() {
                         <option value="other">Other</option>
                     </CustomSelect>
 
-                    <CustomCheckbox
-                        label="I accept the terms of service"
-                        name="acceptedTos"
-                    />
+                    <div className="mt-4">
+                        <CustomCheckbox
+                            label="I accept the terms of service"
+                            name="acceptedTos"
+                        />
+                    </div>
 
                     <button disabled={isSubmitting} type="submit" className="tm-button-submit">
                         Submit
@@ -56,7 +58,7 @@ export function Form1Select() {
 
                 <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
             </>)}
-            
+
         </Formik>
     );
 }
