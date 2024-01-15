@@ -30,7 +30,7 @@ const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
     actions.resetForm();
 };
 
-export function Form1() {
+export function Form3Signup() {
     const {
         values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit, resetForm, getFieldProps,
     } = useFormik<Values>({

@@ -34,7 +34,7 @@ function SubCustomInput({ className, ...rest }: { label: string; name: string; }
     return <CustomInput className={classNames("row-span-full grid grid-rows-subgrid", className)} {...rest} />;
 }
 
-export function Form3() {
+export function Form2FieldArray() {
     return (
         <div className="max-w-[54ch] mx-auto flex flex-col">
 

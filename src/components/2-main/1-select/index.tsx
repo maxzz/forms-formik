@@ -1,6 +1,6 @@
 import { Formik, Form, FormikHelpers } from 'formik';
 import { form2Schema } from './validation';
-import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '../../../ui';
+import { CustomCheckbox, CustomInput, CustomSelect, DisplayInfo } from '@/ui';
 
 type Values = {
     username: string;
@@ -19,7 +19,7 @@ const onSubmit = async (values: Values, actions: FormikHelpers<Values>) => {
     actions.resetForm();
 };
 
-export function Form2() {
+export function Form1Select() {
     return (
         <Formik<Values> initialValues={initialValues} validationSchema={form2Schema} onSubmit={onSubmit}>
 
