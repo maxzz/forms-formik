@@ -1,7 +1,7 @@
 export function Header() {
     return (
-        <header className="px-1 py-0.5 text-[0.5rem] text-end text-orange-500 bg-slate-900">
-            formik
+        <header className="px-1 pt-0.5 pb-1 text-xs text-end text-orange-500 bg-slate-950">
+            <a href="https://github.com/jaredpalmer/formik" className="border-orange-500 border-b border-dotted">formik</a>
         </header>
     );
 }

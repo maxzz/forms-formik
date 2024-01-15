@@ -43,7 +43,7 @@ function LeftSide() {
 export function RightSide() {
     const { values: text } = useSnapshot(appStore).formState;
     return (
-        <div className="pl-3 py-0.5 text-xs text-indigo-300 bg-slate-900 whitespace-pre overflow-auto smallscroll">
+        <div className="px-1.5 py-0.5 text-xs text-indigo-300 bg-slate-950 whitespace-pre overflow-auto smallscroll">
             {text}
         </div>
     );
@@ -52,7 +52,7 @@ export function RightSide() {
 export function MainSection() {
     return (
         <div className="grid grid-cols-[auto,auto,1fr] overflow-auto smallscroll">
-            <div className="w-4 bg-slate-900"></div>
+            <div className="w-2 bg-slate-950"></div>
             <LeftSide />
             <RightSide />
         </div>
