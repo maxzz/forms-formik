@@ -56,6 +56,7 @@ export function Form1Select() {
 
                 <DisplayInfo values={values} errors={errors} resetForm={resetForm} />
             </>)}
+            
         </Formik>
     );
 }
