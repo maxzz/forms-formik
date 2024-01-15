@@ -1,8 +1,21 @@
+import { useEffect } from "react";
+import { useSnapshot } from "valtio";
+import { appStore } from "@/store";
+
 export function DisplayInfo({ values, errors, resetForm }: { values: unknown, errors: unknown, resetForm: Function; }) {
+    const { values: text } = useSnapshot(appStore).formState;
+
+    useEffect(
+        () => {
+            const json = JSON.stringify({ values, errors }, null, 4);
+            appStore.formState.values = json;
+        }, [values, errors]
+    );
+
     return (
         <div className="">
             <div className="text-slate-100 whitespace-pre">
-                {JSON.stringify({ values, errors }, null, 4)}
+                {text}
             </div>
 
             <input
