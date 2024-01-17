@@ -7,12 +7,13 @@ import { Form3Signup } from './3-sign-up';
 import { classNames } from '../../utils/classnames';
 import text3d from "./text3d.module.css";
 
-function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAttributes<HTMLButtonElement>) {
+function TabButton({ active, className, children, ...rest }: { active: boolean; } & HTMLAttributes<HTMLButtonElement>) {
     return (
         <button
             className={classNames(
                 "px-4 pt-3 pb-4 text-xl font-semibold select-none",
-                active ? "text-slate-100" : "text-slate-500 hover:text-slate-200 500 hover:bg-indigo-700/50"
+                active ? "text-slate-100" : "text-slate-500 hover:text-slate-200 500 hover:bg-indigo-700/50",
+                className
             )}
             {...rest}
         >
