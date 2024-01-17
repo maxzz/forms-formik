@@ -5,6 +5,7 @@ import { Form1Select } from './1-select';
 import { Form2FieldArray } from './2-field-array';
 import { Form3Signup } from './3-sign-up';
 import { classNames } from '../../utils/classnames';
+import text3d from "./text3d.module.css";
 
 function TabButton({ active, children, ...rest }: { active: boolean; } & HTMLAttributes<HTMLButtonElement>) {
     return (
@@ -25,10 +26,10 @@ function LeftSide() {
     return (
         <div className="h-full text-sm text-slate-100 flex flex-col">
 
-            <div className="bg-indigo-900 border-indigo-950 border-b flex items-center justify-between">
-                <TabButton active={currentForm === 0} onClick={() => setCurrentForm(0)}>Select</TabButton>
-                <TabButton active={currentForm === 1} onClick={() => setCurrentForm(1)}>FieldArray</TabButton>
-                <TabButton active={currentForm === 2} onClick={() => setCurrentForm(2)}>Sign up</TabButton>
+            <div className="text-2xl bg-indigo-900 border-indigo-950 border-b flex items-center justify-between">
+                <TabButton className={text3d.effect3d} active={currentForm === 0} onClick={() => setCurrentForm(0)}>Select</TabButton>
+                <TabButton className={text3d.effect3d} active={currentForm === 1} onClick={() => setCurrentForm(1)}>FieldArray</TabButton>
+                <TabButton className={text3d.effect3d} active={currentForm === 2} onClick={() => setCurrentForm(2)}>Sign up</TabButton>
             </div>
 
             <div className="py-4 h-full min-w-[440px]">
