@@ -10,7 +10,7 @@ function TabButton({ active, className, children, ...rest }: { active: boolean; 
         <button
             className={classNames(
                 "px-4 pt-3 pb-4 text-xl font-semibold select-none",
-                active ? "text-slate-100" : "text-slate-500 hover:text-slate-200 500 hover:bg-indigo-700/50",
+                active ? "text-slate-100" : "opacity-50 hover:text-slate-200 500 hover:bg-indigo-700/50",
                 className
             )}
             {...rest}
