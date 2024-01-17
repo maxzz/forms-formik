@@ -9,7 +9,7 @@ function TabButton({ active, className, children, ...rest }: { active: boolean; 
     return (
         <button
             className={classNames(
-                "px-4 pt-3 pb-4 text-xl font-semibold select-none",
+                "px-4 pt-3 pb-4 text-sm font-semibold tracking-wider select-none",
                 active ? "text-slate-100" : "opacity-50 hover:text-slate-200 500 hover:bg-indigo-700/50",
                 className
             )}
@@ -25,7 +25,7 @@ export function LeftSide() {
     return (
         <div className="h-full text-sm text-slate-100 flex flex-col">
 
-            <div className="text-2xl bg-indigo-900 border-indigo-950 border-b flex items-center justify-between">
+            <div className="bg-indigo-900 border-indigo-950 border-b flex items-center justify-between">
                 <TabButton className={text3d.effect3d} active={currentForm === 0} onClick={() => setCurrentForm(0)}>Select</TabButton>
                 <TabButton className={text3d.effect3d} active={currentForm === 1} onClick={() => setCurrentForm(1)}>FieldArray</TabButton>
                 <TabButton className={text3d.effect3d} active={currentForm === 2} onClick={() => setCurrentForm(2)}>Sign up</TabButton>

@@ -1,12 +1,21 @@
 .effect3d {
-    --light-pos-x: 1; /* left: -1, center: 0, right: 1 */ /* https://codepen.io/MarkBoots/pen/JjeNRyX */
-    --light-pos-y: -1; /* top: -1, center: 0, bottom: 1 */
-    
+    /* https://codepen.io/MarkBoots/pen/JjeNRyX */
+
+    --light-pos-x: 1;
+    /* left: -1, center: 0, right: 1 */
+
+    --light-pos-y: -1;
+    /* top: -1, center: 0, bottom: 1 */
+
     --rim-size: .02ch;
     --shadow-offset: .2ch;
     --shadow-blur: .1ch;
-    text-shadow: 
-      calc(max(var(--rim-size), 1px) * var(--light-pos-x)) calc(max(var(--rim-size), 1px) * var(--light-pos-y)) hsl(0 0% 100%),
-      calc(max(var(--rim-size), 1px) * var(--light-pos-x) * -1) calc(max(var(--rim-size), 1px) * var(--light-pos-y) * -1) hsl(0 0% 60%),
-      calc(var(--shadow-offset) * var(--light-pos-x) * -1) calc(var(--shadow-offset) * var(--light-pos-y) * -1) var(--shadow-blur) hsl(0 0% 50% / .75) 
+
+    --clr-1: hsl(0 0% 100%);
+    --clr-2: hsl(0 0% 60%);
+    --clr-3: hsl(0 0% 50% / .75);
+
+    text-shadow: calc(max(var(--rim-size), 1px) * var(--light-pos-x)) calc(max(var(--rim-size), 1px) * var(--light-pos-y)) var(--clr-1),
+        calc(max(var(--rim-size), 1px) * var(--light-pos-x) * -1) calc(max(var(--rim-size), 1px) * var(--light-pos-y) * -1) var(--clr-2),
+        calc(var(--shadow-offset) * var(--light-pos-x) * -1) calc(var(--shadow-offset) * var(--light-pos-y) * -1) var(--shadow-blur) var(--clr-3)
 }
