@@ -11,9 +11,9 @@
     --shadow-offset: .2ch;
     --shadow-blur: .1ch;
 
-    --clr-1: hsl(0 0% 100%);
-    --clr-2: hsl(0 0% 60%);
-    --clr-3: hsl(0 0% 50% / .75);
+    --clr-1: hsl(0 0% 100%); /* top right */
+    --clr-2: hsl(0 0% 60%); /* bottom left */
+    --clr-3: hsl(0 0% 50% / .75); /* shadow overall */
 
     text-shadow: calc(max(var(--rim-size), 1px) * var(--light-pos-x)) calc(max(var(--rim-size), 1px) * var(--light-pos-y)) var(--clr-1),
         calc(max(var(--rim-size), 1px) * var(--light-pos-x) * -1) calc(max(var(--rim-size), 1px) * var(--light-pos-y) * -1) var(--clr-2),

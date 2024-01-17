@@ -9,11 +9,11 @@ function TabButton({ active, className, children, ...rest }: { active: boolean; 
     return (
         <button
             className={classNames(
-                "px-4 pt-3 pb-4 text-sm font-semibold tracking-wider select-none",
-                active ? "text-slate-100" : "opacity-50 hover:text-slate-200 500 hover:bg-indigo-700/50",
+                "px-4 pt-3 pb-4 text-xl font-semibold tracking-wider select-none",
+                active ? "text-indigo-500" : "opacity-50 hover:opacity-100 hover:text-indigo-200 500 hover:bg-indigo-700/50",
                 className
             )}
-            style={{'--clr-1': '#f00', '--clr-2': '#f00', '--clr-3': '#f00'}}
+            style={{'--clr-1': '#9a96fb', '--clr-2': '#353276', '--clr-3': '#151348'}}
             {...rest}
         >
             {children}
@@ -40,3 +40,5 @@ export function LeftSide() {
         </div>
     );
 }
+
+
