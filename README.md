@@ -2,7 +2,7 @@
 
 Playground for React forms with Formik library.
 
-![](src/assets/previews/2024-01-15_15-00-33.png)
+![](src/assets/previews/2024-01-16_19-03-42.png)
 
 ### Links, refs, credits
 
