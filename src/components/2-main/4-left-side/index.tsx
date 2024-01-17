@@ -13,6 +13,7 @@ function TabButton({ active, className, children, ...rest }: { active: boolean; 
                 active ? "text-slate-100" : "opacity-50 hover:text-slate-200 500 hover:bg-indigo-700/50",
                 className
             )}
+            style={{'--clr-1': '#f00', '--clr-2': '#f00', '--clr-3': '#f00'}}
             {...rest}
         >
             {children}
